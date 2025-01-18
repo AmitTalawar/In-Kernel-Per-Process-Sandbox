@@ -9,9 +9,6 @@ The tool file consists of two passes (Currently has only Instrumentation pass, w
 1. Libc Call Graph Pass
 2. DUMMY SYSTEM CALL Instrumentation
 
-# LIBC Call Graph Pass
-A small note on the status of this pass, I'm currently having difficulties merging the graphs, in functions which are calling other functions. I'm having difficulties coding the inheritance part. So I have refrained from posting that pass in the teams.
-
 # Dummy System Call Instrumentation
 
 Enter into the Out of Tree Pass Folder (submitted file) and execute the following commands to generate the shared library pass file.
@@ -90,7 +87,6 @@ $LLVM_DIR/bin/clang -emit-llvm -c ~/Semester\ 1/Computer\ System\ Security/Proje
 
 $LLVM_DIR/bin/opt -load-pass-plugin ~/Semester\ 1/Computer\ System\ Security/Project/Final_Passes/build/lib/libStaticCallCounter.so -passes="print<static-cc>" -disable-output trial_input.bc -->
 # CSS Project Part II
-- Note that the work on Part I is completely done. The submission is omitted here as Vinod Sir has advised to only submit the Part II.
 ## Compiling the kernel and booting it in Virtual Box
  - Downloading the kernel
  ```bash
@@ -160,8 +156,6 @@ make O=../build -j$(nproc)
 
 
 ## Kernel Monitor
-
-- Note that the work on kernel monitor is still under progress. The submitted file has a bootstraping code that prints the Libc Call ID the dummy syscall is called with as an argument.
 - Writing the code base
 ```bash
 touch lib_monitor.py
